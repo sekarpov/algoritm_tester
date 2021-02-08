@@ -8,7 +8,7 @@ class Paint
     public $map = [];
     public $w;
     public $h;
-    public $symbols = " #+0x";
+    public $symbols = " #<>^vx";
 
     public function __construct(int $w, int $h)
     {
@@ -100,12 +100,11 @@ class Paint
     public function Fill(int $x, int $y)
     {
         if(!$this->isEmpty($x, $y)) return;
-        $this->setMap($x, $y, 2);
-        $this->Fill($x - 1, $y);
-        $this->Fill($x + 1, $y);
-        $this->Fill($x, $y - 1);
-        $this->Fill($x, $y + 1);
-        $this->setMap($x, $y, 4);
+        $this->setMap($x, $y, 2); $this->Fill($x - 1, $y);
+        $this->setMap($x, $y, 3); $this->Fill($x + 1, $y);
+        $this->setMap($x, $y, 4); $this->Fill($x, $y - 1);
+        $this->setMap($x, $y, 5); $this->Fill($x, $y + 1);
+        $this->setMap($x, $y, 6);
 
     }
 }
