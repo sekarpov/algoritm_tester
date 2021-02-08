@@ -19,7 +19,8 @@ require_once "Tester.php";
 /**
  * Задача - с закрашиванием области
  */
-$paint = new Paint(50, 30);
+$paint = new Paint(50, 20);
+$paint->putRandomNumbers(500);
 $paint->Fill(2, 2);
 
 //$tester->RunTest();
