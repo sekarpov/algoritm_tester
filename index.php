@@ -2,6 +2,7 @@
 require_once "StringLength.php";
 require_once "01-LuckyTickets/LuckyTickets.php";
 require_once "02-Fill/Paint.php";
+require_once "02-Algebra/01-NOD/Nod.php";
 require_once "Tester.php";
 
 /**
@@ -19,8 +20,14 @@ require_once "Tester.php";
 /**
  * Задача - с закрашиванием области
  */
-$paint = new Paint(50, 20);
-$paint->putRandomNumbers(500);
-$paint->Fill(2, 2);
+//$paint = new Paint(50, 20);
+//$paint->putRandomNumbers(500);
+//$paint->Fill(2, 2);
 
-//$tester->RunTest();
+/**
+ * Задача - НОД
+ */
+$task = new Nod();
+$tester = new Tester($task, str_replace('\\', '\\\\', dirname(__FILE__)) . '\\02-Algebra\\01-NOD\\checkFiles\\');
+
+$tester->RunTest();
